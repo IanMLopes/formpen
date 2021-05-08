@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <link rel="stylesheet" href="./style.css">
+    <title>Formulario</title>
+    <script src="../src/scripts/html2canvas.js"></script>
+    <script>
+      function doCapture() {
+          html2canvas(document.getElementById('div2download')).then(function (canvas) {
+              var canvas2download = canvas.toDataURL("image/png");
+              var image = document.createElement('a');
+              image.id = 'image2download'
+              image.href = canvas2download;
+              image.download = 'smt';
+              image.click();
+
+              return canvas2download;
+          });
+      }
+      </script>
+  </head>
+  <body>
+   
+    <div id="app">
+      
+  </div>
+
+  </body>
+</html>
