@@ -1,20 +1,38 @@
 <template>
 
-    <div id="list">
+    <div id="list" >
         <h2> Lista</h2>
-        <ul>
+        <ul v-for="contato of listar_info" :key="contato.id">
 
-            <li    class="list1">  <router-link to="/form">opção 1</router-link></li>
-            <li @click="$router.push('/form' )">opção 2</li>
-            <li @click="$router.push('/form' )">opção 3</li>
-            <li @click="$router.push('/form' )">opção 4</li>
+            <li  class="list1" @click="$router.push('/form' )">opção 1</li>
+            <li @click="$router.push('/form' )"> {{contato.nome}} opção 2</li>
+            <li @click="$router.push('/form' )"> {{contato.sexo}} opção 3</li>
+            <li @click="$router.push('/form' )"> {{contato.email}} opção 4</li>
             <li @click="$router.push('/form' )">opção 5</li>
         </ul>
     </div>
 </template>
     
 <script>
+import DataServices from '../services/DataServices'
 
+export default {
+
+    data(){
+    return {
+        listar_info:[]
+    }
+    },
+
+
+    mounted(){
+        DataServices.listar().then(response => {
+            console.log(response.data)
+            this.listar_info = response.data
+        })
+
+    }
+}
 
 </script>
 
