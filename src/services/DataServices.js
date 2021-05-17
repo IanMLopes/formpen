@@ -4,7 +4,7 @@ import {ht} from "./config"
 export default {
 
   buscar:() => {
-    return http.get('/usuarios/?nr_sequencia=1&nr_atendimento=3345');
+    return http.get('/usuarios/?nr_atendimento=3345');
     // /usuarios/?nr_sequencia=1&nr_atendimento=3345
   },
 

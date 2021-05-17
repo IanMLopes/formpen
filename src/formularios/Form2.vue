@@ -1,7 +1,8 @@
 <template>
 
-  <div>
+  <div  >
      <div v-html="paghtml"> </div>
+     
    <div > {{2 + 1}} </div>
      
   </div>

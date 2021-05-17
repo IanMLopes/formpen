@@ -1,55 +1,54 @@
 <template >
 
-<body id="termo" style="width:  900px;  height: 1442px;  margin: 0 auto;  padding: 0;  border: 0;  display: block;  align-items: center;" >
+<body id="termo" >
     
 <div>
     
-  <div id="capturar" style="width: 900px; height: 1442px; border: 1px solid; padding: 0; margin: 0 auto;
-        background: #FFF; align-items: center; align-content: center;">
+  <div id="capturar" >
 
-    <canvas id="paint-canvas" style="width: 900px; height: 1442px; border: 1px solid black; cursor:crosshair;  position:absolute; display: block; margin: 0 auto">  </canvas>
+    <canvas id="paint-canvas">  </canvas>
    
-             <table  style="border: 1px solid;   width: 90%;   margin: 0 auto 0 auto;   margin-top: 10px;">
+             <table >
     
             <tr>
                
-                <td rowspan="4"  style="border: 1px solid;  text-align: center;   font: 400 14px Roboto, sans-serif;    color: #808080;">  
+                <td rowspan="4"  >  
                 <img crossorigin="anonymous"  src="./samel_logo.jpg" alt="" style="width: 120px; height: 120px;"> </td>
 
-                <td rowspan="4"    style="border: 1px solid;  text-align: center;   font: 400 14px Roboto, sans-serif; font-weight:bold, color: #808080;  ">
+                <td rowspan="4"  >
                     TERMO DE CONSENTIMENTO INFORMADO PARA INTERNAÇÃO E PROCEDIMENTOS NAS UNIDADES DE TERAPIA INTENSIVA (UTI)</td>
                     
-                <td style="border: 1px solid;  text-align: center;   font: 400 14px Roboto, sans-serif;    color: #808080;">Código: F-CRP-012</td>
+                <td >Código: F-CRP-012</td>
             </tr>
     
             <tr>
-                <td style="border: 1px solid;  text-align: center;   font: 400 14px Roboto, sans-serif;    color: #808080;">Data da Revisão: 13/07/2020</td>
+                <td >Data da Revisão: 13/07/2020</td>
             </tr>
     
               <tr>
-                <td style="border: 1px solid;  text-align: center;   font: 400 14px Roboto, sans-serif;    color: #808080;">N° Revisão: 03</td>
+                <td >N° Revisão: 03</td>
             </tr>
     
               <tr>
-                <td style="border: 1px solid;  text-align: center;   font: 400 14px Roboto, sans-serif;    color: #808080;">Página: 1 de 1</td>
+                <td >Página: 1 de 1</td>
             </tr>
     
     </table>
         
-    <div  style=" width: 85%;   margin: 10px auto;   line-height: 14pt;   font: 400 16px Roboto, sans-serif;   color: #000;">
-        <p style=" text-align: justify;   margin: 10px auto;">Este Termo de Consentimento Informado tem o objetivo de informar ao paciente e/ou ao seu 
+    <div  id="corpo">
+        <p >Este Termo de Consentimento Informado tem o objetivo de informar ao paciente e/ou ao seu 
         responsável/representante legal, todos os aspectos, riscos e objetivos da INTERNAÇÃO NA UNIDADE DE
         TERAPIA INTENSIVA (UTI) a qual o paciente será submetido, complementando as informações prestadas pelo médico 
         assistente e pela equipe multidisciplinar do Hospital SAMEL.
         </p>
-        <p style=" text-align: justify;   margin: 10px auto;">
-        Paciente:   Registo: <br/>
+        <p >
+        Paciente:<strong> {{ListarDados.NM_PESSOA_FISICA}}</strong>  Registo: <br/>
         
-        Convênio: UTI:  Aduto (  )  NEO (  )  <br/> 
+        Convênio:<strong> {{ListarDados.IE_TIPO_CONVENIO}}</strong> UTI:  Aduto (  )  NEO (  )  <br/> 
         Leito:__________ Indicação/Diagnóstico: <br/> <br/>
-        Data da entrada na UTI: __________/_________/____________.
+        Data da entrada na UTI:<strong> {{ListarDados.DT_ENTRADA}}</strong>
         </p>
-        <p style=" text-align: justify;   margin: 10px auto;">
+        <p >
             <strong>DECLARO QUE:</strong><br/>
     1. Após a realização de exames e cuidadosas avaliações fui informado da necessidade e indicação de internação e procedimentos médico-hospitalares em Unidade de Terapia Intensiva (UTI);<br/>
     2.Todas as minhas perguntas foram detalhadamente respondidas e as minhas dúvidas foram esclarecidas satisfatoriamente;<br/>
@@ -71,14 +70,14 @@
     7. Estou plenamente informado e satisfeito com as informações recebidas e sei que poderei esclarecer quaisquer novas dúvidas que possam surgir em qualquer fase do tratamento; e,
     8. Estou ciente que a Unidade de Terapia Intensiva (UTI) é um local com regras próprias e restritivas para acompanhantes e visitas, conforme o caso.
         </p>
-        <p style=" text-align: justify;   margin: 10px auto;">
+        <p >
            <strong> LIDO, COMPREENDIDO, CIENTE E DE ACORDO COM TODO O CONTEÚDO DESTE TERMO, AUTORIZO EXPRESSAMENTE A INTERNAÇÃO E PROCEDIMENTOS EM UNIDADE DE TERAPIA INTENSIVA (UTI).</strong><br/>
     
         </p>
-        <p style=" text-align: justify;   margin: 10px auto;">
+        <p>
     (Reservo-me o direito de revogar, total ou parcialmente, este consentimento antes da internação)
         </p>
-        <p style=" text-align: justify;   margin: 10px auto;">
+        <p >
              Manaus, _____/_____/_________. Hora :____:____<br/>
         </p>
     
@@ -89,18 +88,18 @@
     
         </p>
     
-        <p style=" text-align: justify;   margin: 10px auto;">
+        <p >
             Nome:____________________RG/CPF:____________________Parentesco:____________
         </p>
     
     
-        <p style=" text-align: justify;   margin: 10px auto;">
+        <p >
            <strong> Termo de Responsabilidade Médica</strong>
     Declaro para os devidos fins e efeitos que expliquei ao paciente (ou seu responsável/representante legal) de forma clara e objetiva o diagnóstico, o prognóstico, os riscos e objetivos da necessidade de internação em Unidade de Terapia Intensiva (UTI), assim como os seus benefícios e alternativas, esclarecendo suas dúvidas e deixando-o livre para decidir a respeito da internação. De acordo com o meu entendimento, o paciente (ou seu responsável/ representante legal) está em perfeitas condições de compreender todo o conteúdo deste Termo e de autorizar a internação para cuidados intensivos.
     
         </p>
     
-        <p style=" text-align: justify;   margin: 10px auto;">
+        <p >
             Manaus, _____/_____/_________. Hora :____:____
         </p>
         <p  style=" text-align: justify;   margin: 10px auto; float: right;">
@@ -115,7 +114,7 @@
     </div>
     
 
-  <div style="width: 90%; height: auto; justify-content: space-between; margin: 0 auto 50px auto; display: flex;">
+  <div class="botoes">
     <div class="colors" style=" text-align: center;  ">
         <button type="button" value="#000000"  style=" background-color: #000000;; height: 40px; display: inline-block; padding: 12px;  border: 2px solid #00000026;    outline: none;  cursor: pointer; "></button>
 
@@ -263,13 +262,9 @@ clearButton.addEventListener('click', function() {
 forcanvas();
 
 DataServices.buscar().then(response => {
-              
-     console.log(typeof response.data[0].HTML_FORM)
+    console.log(response.data[0])
 
-var objeto  = JSON.parse(response.data[0].HTML_FORM);
-console.log(objeto)
-
-    this.ListarDados = response.data[0].HTML_FORM;
+    this.ListarDados = response.data[0];
     console.log(this.ListarDados)
   
                 
@@ -286,8 +281,29 @@ console.log(objeto)
 
 <style scoped>
 
-
-
-
+#termo {
+    width:  900px;  height: 100%;  margin: 0 auto;  padding: 0;  border: 0;  display: block;  align-items: center;
+}
+#capturar {
+    width: 900px; height: 1442px; border: 1px solid; padding: 0; margin: 0 auto;  background: #FFF; align-items: center; align-content: center;
+}
+#paint-canvas{
+     width: 900px; height: 1442px; border: 1px solid black; cursor:crosshair;  position:absolute; display: block; margin: 0 auto
+}
+table {
+     border: 1px solid;   width: 90%;   margin: 0 auto 0 auto;   margin-top: 10px;
+}
+table td {
+    border: 1px solid;  text-align: center;   font: 400 14px Roboto, sans-serif;    color: #808080;
+}
+#corpo {
+    width: 85%;   margin: 10px auto;   line-height: 14pt;   font: 400 16px Roboto, sans-serif;   color: #000;
+}
+#corpo p {
+    text-align: justify;   margin: 10px auto;
+}
+.botoes {
+    width: 90%; height: auto; justify-content: space-between; margin: 0 auto 50px auto; display: flex;
+}
 
 </style>
