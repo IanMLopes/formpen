@@ -1,24 +1,25 @@
 
-* {
-    box-sizing: border-box;
-  }
+
+
+/*
 
   #base64 {
     display: none;
   }
   
-  main {
+   main {
     width: 800px;
     border: 1px solid #e0e0e0;
     margin: 0 auto;
     display: flex;
     flex-grow: 1;
-  }
+  } 
   
   .left-block {
-    width: 160px;
+    width: 90px;
     border-right: 1px solid #e0e0e0;
     margin-right: 20px;
+    height: auto;
   }
   
   .colors {
@@ -46,9 +47,9 @@
   .colors button:nth-of-type(2) {
     background-color: #ffffff;
   }
+   */
   
-  
-  /* .brushes {
+  /* .brushes {  *************************************
     background-color: purple;
     padding-top: 5px
   }
@@ -92,8 +93,8 @@
   
   .brushes button:nth-of-type(5):after {
     height: 5px;
-  } */
-
+  } ***********************************/ 
+/* 
   .brushes {
     display: none;
   }
@@ -120,7 +121,7 @@
   
   .right-block {
     width: 640px;
-    /* margin-right: 10px;  */
+   
     right: 50%;
     transform: translate(-50%);
     
@@ -129,19 +130,20 @@
   #paint-canvas {
     cursor:crosshair;
     position: absolute;
-    /* border-bottom: 1px solid #000000;
-     */
+   
      border: 1px solid black;
   }
   
   #div2download {
-    width: 383px;
-    height: 445px;
+    width: auto;
+    height: auto;
   }
 
   .can {
     display: flex;
     flex-direction: row;
+    height: 200px;
+    
   
  
-  }
+  }  */

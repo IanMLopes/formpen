@@ -1,11 +1,6 @@
 <template>
-
-    <div>
-         <p>Formulario</p>
           
     <div class="can">
-  
-
     <div class="left-block">
         <div class="colors">
             <button type="button" value="#000000"></button>
@@ -30,42 +25,17 @@
 
                 <input type="text" name="base64" id="base64" value="teste">
 
-                <button type="submit" id="send">Send Data</button>
+                <!-- <button type="submit" id="send">Send Data</button> -->
 
             </form>
         </div>
     </div>
 
-    <div id="div2download">
+    <div >
 
         <div>
             <!-- <img src="../images/form.jpg" alt="" id="form_image"> -->
-            <label for="teste1">cond</label>
-            <input type="checkbox" name="teste1" id="teste1"><br>
-            <label for="teste1">cond</label>
-            <input type="checkbox" name="teste1" id="teste1"><br>
-            <label for="teste1">cond</label>
-            <input type="checkbox" name="teste1" id="teste1"><br>
-            <label for="teste1">cond</label>
-            <input type="checkbox" name="teste1" id="teste1"><br>
-            <label for="teste1">cond</label>
-            <input type="checkbox" name="teste1" id="teste1"><br>
-            <label for="teste1">cond</label>
-            <input type="checkbox" name="teste1" id="teste1"><br>
-            <label for="teste1">cond</label>
-            <input type="checkbox" name="teste1" id="teste1"><br>
-            <label for="teste1">cond</label>
-            <input type="checkbox" name="teste1" id="teste1"><br>
-            <label for="teste1">cond</label>
-            <input type="checkbox" name="teste1" id="teste1"><br>
-            <label for="teste1">cond</label>
-            <input type="checkbox" name="teste1" id="teste1"><br>
-            <label for="teste1">cond</label>
-            <input type="checkbox" name="teste1" id="teste1"><br>
-            <label for="teste1">cond</label>
-            <input type="checkbox" name="teste1" id="teste1"><br>
-            <label for="teste1">cond</label>
-            <input type="checkbox" name="teste1" id="teste1"><br>
+          
             <label for="teste1">cond</label>
             <input type="checkbox" name="teste1" id="teste1"><br>
             <label for="teste1">cond</label>
@@ -76,13 +46,11 @@
         </div>
 
         <div class="right-block">
-            <canvas id="paint-canvas" width="400" height="75"></canvas>    
+            <canvas id="paint-canvas" width="400" height="75"></canvas>
         </div>
 
     </div> <!-- div2download -->
 
-    </div>
- 
 </div>
 
 </template>
@@ -156,14 +124,97 @@ export default {
     clearButton.addEventListener('click', function() {
       context.clearRect(0, 0, canvas.width, canvas.height);
     });
-  
-
-}}
+}
+}
 
  </script>
 
 
 <style scoped>
+
+  #base64 {
+    display: none;
+  }
+  
+  .left-block {
+    width: 160px;
+    border-right: 1px solid #e0e0e0;
+    margin-right: 20px;
+  }
+  
+  .colors {
+    background-color: #ece8e8;
+    text-align: center;
+    padding-bottom: 5px;
+    padding-top: 10px;
+  }
+  
+  .colors button {
+    display: inline-block;
+    border: 1px solid #00000026;
+    border-radius: 0;
+    outline: none;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    margin-bottom: 5px
+  }
+  
+  .colors button:nth-of-type(1) {
+    background-color: #000000;
+  }
+  
+  .colors button:nth-of-type(2) {
+    background-color: #ffffff;
+  }
+  
+
+  .brushes {
+    display: none;
+  }
+  
+  .buttons {
+    height: 80px;
+    padding-top: 10px;
+  }
+  
+  .buttons button {
+    display: block;
+    width: 100%;
+    border: 0;
+    border-radius: 0;
+    background-color: #ece8e8;
+    margin-bottom: 5px;
+    padding: 5px;
+    height: 30px;
+    outline: none;
+    position: relative;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .right-block {
+    width: 640px;
+    /* margin-left: 20px; */
+  }
+  
+  #paint-canvas {
+    cursor:crosshair;
+    position: absolute;
+    /* border-bottom: 1px solid #000000;
+     */
+     border: 1px solid black;
+  }
+  
+  #div2download {
+    width: 383px;
+    height: 300px;
+  }
+
+  .can {
+    display: flex;
+    flex-direction: row;
+  }
 
 </style>
 
