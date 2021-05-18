@@ -2,10 +2,10 @@
 
 
   <div class="buscar" >
-        <input type="text" placeholder="Pesquisar RN "/>
- 
-          <button   type="button"  @click="$router.push('/list' )" > <strong>Pesquisar</strong> </button>
+        <input type="text" placeholder="Pesquisar RN "  v-model="dados"/>
 
+            <button  v-on:click.prevent="savern()" > <strong>Pesquisar</strong> </button>
+          <!-- <button   type="button"  @click="$router.push('/list' )" > <strong>Pesquisar</strong> </button> -->
       
   </div>
 
@@ -16,14 +16,28 @@
 
 export default {
 
-  // mounted: {
-  //   DataServices.buscar(nr_atendimento)
-  //   .then(response => {
-  //   console.log(response)             
-  //   console.log(response.data)
-  //  })
-  // }
+  data() {
+    return{
 
+    dados: ''
+
+    } 
+  },
+
+  methods: {
+    savern() {
+      // let dados = localStorage.getItem('rnApp');
+
+      // if(rns) {
+      //   this.dados = JSON.parse(rns);
+      //   this.dados.push(rn);
+      // }else {
+      //   rns = [rn];
+      // }
+
+      localStorage.setItem('rnApp', JSON.stringify(this.dados))
+    }
+  }
 }
 
 </script>

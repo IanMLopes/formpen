@@ -4,7 +4,7 @@
     
 <div>
     
- {{ 2 + 2}}
+
   <div id="capturar" style="width: 900px; height: 1442px; border: 1px solid; padding: 0; margin: 0 auto;
         background: #FFF; align-items: center; align-content: center;">
 
@@ -38,6 +38,7 @@
     </table>
         
     <div  style=" width: 85%;   margin: 10px auto;   line-height: 14pt;   font: 400 16px Roboto, sans-serif;   color: #000;">
+    <p  style="border: 1px solid;  text-align: center;   font: 400 14px Roboto, sans-serif; font-weight:bold, color: #808080;  "> TERMO DE CONSENTIMENTO INFORMADO PARA INTERNAÇÃO E PROCEDIMENTOS NAS UNIDADES DE TERAPIA INTENSIVA (UTI)</p>
         <p style=" text-align: justify;   margin: 10px auto;">Este Termo de Consentimento Informado tem o objetivo de informar ao paciente e/ou ao seu 
         responsável/representante legal, todos os aspectos, riscos e objetivos da INTERNAÇÃO NA UNIDADE DE
         TERAPIA INTENSIVA (UTI) a qual o paciente será submetido, complementando as informações prestadas pelo médico 

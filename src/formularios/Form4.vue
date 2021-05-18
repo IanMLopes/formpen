@@ -1,6 +1,6 @@
 <template >
 
-<body id="termo" >
+<div id="termo" >
     
 <div>
     
@@ -137,7 +137,7 @@
 </div>
 
 
-</body>
+</div>
 
 </template>
 
@@ -161,7 +161,7 @@ export default {
 methods: {
 cap() {
     
-     html2canvas(document.getElementById('termo')).then(canvas => {
+     html2canvas(document.getElementById('capturar')).then(canvas => {
             crossOrigin: 'Anonymous'
             console.log(canvas.toDataURL('image/jpeg', 1))
     }
