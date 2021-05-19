@@ -83,9 +83,9 @@
              Manaus, _____/_____/_________. Hora :____:____<br/>
         </p>
     
-        <p  style=" text-align: justify; margin-top: 50px;  margin-bottom: 20px;  margin: 10px auto;">
+        <p  style=" text-align: justify; margin-top: 50px;  margin-bottom: 10px;  margin: 10px auto;">
     
-         ___________________________________________________________________________________<br/><br/>
+         ___________________________________________________________________________________<br/>
         Assinatura do Paciente ou Responsável/Representante Legal<br/>
     
         </p>
@@ -101,10 +101,10 @@
     
         </p>
     
-        <p style=" text-align: justify;   margin: 10px auto;">
+        <p style=" text-align: justify;   margin-top: 25px">
             Manaus, _____/_____/_________. Hora :____:____
         </p>
-        <p  style=" text-align: justify;   margin: 10px auto; float: right;">
+        <p  style=" text-align: justify;   margin-top: 25px; float: right;">
             ____________________________________________<br/>
             Assinatura do Médico com carimbo do CRM
     

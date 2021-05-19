@@ -1,15 +1,15 @@
 <template>
 
 
-  <div id="termo" >
+  <div  >
 
-    <div >
+    <div id="termo">
 
-    <table  style="border: 1px solid;   width: 100%;   margin: 0 auto 0 auto;   margin-top: 30px;">
+    <table id="table"  style="border: 1px solid;   width: 900px;      margin-top: 30px;">
     
             <tr>
                
-                <td rowspan="4"  style="border: 1px solid;  text-align: center;   font: 400 14px Roboto, sans-serif;    color: #808080;">  
+                <td rowspan="4"  style="border: 1px solid;  text-align: center;   font: 400 14px Roboto, sans-serif;    color: #212529;">  
                 <img crossorigin="anonymous"  src="./samel_logo.jpg" alt="" style="width: 120px; height: 120px;"> </td>
 
                 <td rowspan="4"    style="border: 1px solid;  text-align: center;   font: 400 14px Roboto, sans-serif; font-weight:bold, color: #808080;  ">
@@ -31,11 +31,11 @@
             </tr>
     
     </table>
-    <div class="teste">
+   
     <canvas id="paint-canvas"></canvas>
 
      <div v-html="paghtml"> </div>
-    </div>
+  
 
     </div>
 
@@ -75,59 +75,78 @@ export default {
     
         data(){
             return {
-                paghtml:[],        
+                paghtml:[], 
+                stringImg:'',
+                nr_atendimento:localStorage.getItem('nr_atendimento'),
+                armazenar_termo:  localStorage.getItem('armazenar_termo')
+                
             }
             
         },
         created() {
-           DataServices.buscar().then(response => {
+           DataServices.buscar(this.armazenar_termo,  this.nr_atendimento).then(response => {
             //  console.log(response.data[0].HTML_FORM)
                     // console.log(response.data[0].HTML_FORM)
                     this.paghtml = response.data[0].HTML_FORM;
-                    
-                
+
                 })                
         },
         
 
 methods: {
-cap() {
-  console.log("SSSSSSSSSSSSS")
+  
+ cap() {
     
-     html2canvas(document.querySelector('#termo')).then(canvas => {
+  html2canvas(document.querySelector('#termo'), {scrollY: -window.scrollY }).then(canvas => {
            
-            console.log(canvas.toDataURL('image/jpeg'))
+    this.stringImg = canvas.toDataURL('image/jpeg')
+console.log("1")
+
+   if (this.stringImg){
+     console.log("4")
+      this.enviarDados()
+      
+    // localStorage.clear();
+  
+    alert("Enviado com Sucesso!")
+
+
+    this.$router.push('/list')
+        
+   }
+
     }
-     )
- 
+  )
+},
+
+async enviarDados(){
+   console.log("3")
+
+ let enviar = await DataServices.create(this.nr_atendimento, this.armazenar_termo, this.stringImg )
+ return enviar
 }
-     },
+
+},
+
+
 
 
 mounted(){
-  
-
-        
 
 function forcanvas() {
-  console.log("AAAAAAAAAAAa")
 var canvas = document.querySelector('#paint-canvas');
 var context = canvas.getContext("2d");
 // var boundings = canvas.getBoundingClientRect();
-
 
 // Specifications
 var  mouseX = 0;
 var mouseY = 0;
 
-
 canvas.width  =  900;
-canvas.height =  1200;
-
+canvas.height =  1300;
 
 // canvas.style.width = "900px";
 // canvas.style.height = "1442px";
-
 
 context.strokeStyle = 'black'; // initial brush color
 
@@ -166,7 +185,6 @@ canvas.addEventListener('mousemove', function(event) {
   if(isDrawing){
     context.lineTo(mouseX, mouseY);
     context.stroke();
-    
   }
  
 });
@@ -199,28 +217,22 @@ clearButton.addEventListener('click', function() {
 
 forcanvas()
 
-},        
+},
 
-
-  
 }
-
-
-
 
 </script>
 
 
 <style scoped>
 #paint-canvas{
-     position: absolute; width: 900px; height: 1200px; border: 1px solid black; cursor:crosshair;   margin: 0 auto
+     position: absolute; width: 900px; height: 1300px;  cursor:crosshair; 
 }
+
 #termo {
 
-   position: relative; width:  900px;  margin: 0 auto;  padding: 0;  border: 0;    align-items: center;
+   position: relative; width:  950px;  margin: 0 auto;  padding: 5px;  border: 0;    align-items: center;
 
 }
-
-
 
 </style>

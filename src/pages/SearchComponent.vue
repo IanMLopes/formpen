@@ -2,41 +2,60 @@
 
 
   <div class="buscar" >
-        <input type="text" placeholder="Pesquisar RN "  v-model="dados"/>
+        <input type="text"  placeholder="Pesquisar por número de atendimento "  v-model="nr_atendimento"/>
 
-            <button  v-on:click.prevent="savern()" > <strong>Pesquisar</strong> </button>
+            <button  v-on:click.prevent="botao()"  > <strong>Pesquisar</strong> </button>
           <!-- <button   type="button"  @click="$router.push('/list' )" > <strong>Pesquisar</strong> </button> -->
-      
+     
+  
+
   </div>
 
 </template>
 
 <script>
-// import DataServices from '../services/DataServices'
+import DataServices from '../services/DataServices'
 
 export default {
 
   data() {
     return{
 
-    dados: ''
+    nr_atendimento: '',
 
     } 
   },
 
   methods: {
-    savern() {
-      // let dados = localStorage.getItem('rnApp');
 
-      // if(rns) {
-      //   this.dados = JSON.parse(rns);
-      //   this.dados.push(rn);
-      // }else {
-      //   rns = [rn];
-      // }
+    async botao(){
+      if(this.nr_atendimento == ""){
+    alert("Digite o Número de Atendimento!")
+      }
+      else {
 
-      localStorage.setItem('rnApp', JSON.stringify(this.dados))
+        let ex = await DataServices.validarNrAtendimento(this.nr_atendimento)
+
+        if(ex.data.length > 0){
+          this.armazenarNrAtendimento()
+        
+        }else {
+           alert("Número de Atendimento Não Existe!")
+        }
+
+      }
+
+
+    },
+
+   armazenarNrAtendimento() {
+      console.log("nr_atendimento:"+ this.nr_atendimento);
+
+      localStorage.setItem('nr_atendimento', parseInt(this.nr_atendimento))
+
+      this.$router.push('/list')
     }
+ 
   }
 }
 
@@ -51,16 +70,10 @@ export default {
   width: 500px;
   height: 200px;
   background: #f0f0f5;
-  padding: 50px;
+  padding: 40px;
   align-items: center;
   border-radius: 8px;
-/*   
-  left: 50%;
-  transform: translateX(-50%); */
-
   margin: auto ;
- /* margin-left: auto;
-    margin-right: auto; */
    bottom: 50%;
   transform: translateY(50%);
    
@@ -69,14 +82,13 @@ export default {
 .buscar input {
   position: relative;
   display: flex;
-  width: 50%;
+  width: 90%;
   height: 50px;
   color: #333;
   border: 1px solid #dcdce6;
   border-radius: 8px;
   margin-right: 5px;
   padding-left: 10px;
-  margin-left: 60px;
   font: 400 18px Roboto, sans-serif;
   background: #FFFFFF;
  

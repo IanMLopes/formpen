@@ -1,15 +1,17 @@
 <template>
-
+<div>
     <div id="list">
+       
         <h2> Termos</h2>
-       <ul v-for="postagens of listar_posts" :key="postagens.id">
+       <ul v-for="termos of  listaResultados" :key="termos.NR_SEQUENCIA"  >
 
-            <li @click="$router.push('/form3' )">id unico: {{postagens.id}} </li>
-            <li @click="$router.push('/form2' )"> title: {{postagens.title}} </li>
-         
-          
+<li v-on:click.prevent="armazenarTermo(termos.NR_SEQUENCIA)" :class="{ inactive: termos.status }"> {{termos.NR_SEQUENCIA}}- {{termos.DS_TERMO}} </li>
+
         </ul>
+     
     </div>
+    <button class="sair" v-on:click.prevent="sair()">SAIR</button>
+</div>
 </template>
     
 <script>
@@ -18,19 +20,84 @@ import DataServices from '../services/DataServices'
 export default {
     data(){
         return {
-            listar_posts:[]
+            listar_termos:[],
+            armazenar_termo:'',
+            nr_atendimento:localStorage.getItem('nr_atendimento'),
+            listaFormTermos: '',
+            listaResultados:''
+            
         }
     },
 
-
 mounted(){
-    DataServices.listar().then(response => {
-        // console.log(response.data)
-        this.listar_posts = response.data
+
+    this.carregarDados()
+    
+
+},
+
+
+
+methods: {
+
+async carregarDados(){
+
+  await  DataServices.buscartermos().then(response => {
+    
+        this.listar_termos = response.data
+console.log("11111111",this.listar_termos)
+    
+
+})
+
+
+   await DataServices.listaFormTermos(this.nr_atendimento)
+    .then(response => {
+        this.listaFormTermos = response.data
+        console.log("22222222",response.data)
+
+        this.buscarFormTermos()
     })
+},
+
+buscarFormTermos() {
+
+console.log("sss",this.listar_termos, this.listaFormTermos)
+if(this.listaFormTermos.length == 0){
+    this.listaResultados = this.listar_termos 
+}else {
+
+for(let item of this.listaFormTermos){
+    this.listaResultados = this.listar_termos.map(item2 => {
+        if(item.NR_SEQ_TERMO_PADRAO == item2.NR_SEQUENCIA){
+           item2['status'] = true
+        }
+        return item2
+    }) 
+  }
+  
 }
 
 
+  console.log("3333333",this.listaResultados)
+},
+
+armazenarTermo(termoSequencia) {
+
+localStorage.setItem('armazenar_termo', JSON.stringify(termoSequencia))
+    //   console.log(localStorage.setItem('armazenar_termo', JSON.stringify(this.listar_termos[0].NR_SEQUENCIA)))
+
+this.$router.push('/form2')
+},
+
+sair(){
+    localStorage.clear();
+    this.$router.push('/')
+} 
+
+},
+
+   
 }
 
 </script>
@@ -39,11 +106,17 @@ mounted(){
 <style scoped>
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap');
 
+.inactive{
+    background: #cccccc ;
+    border: 1px solid #999999;
+    color: #666666;
+    pointer-events:none;
+
+}
+
 #list {
    width: 50%;
    height:  auto;
-   /* border: 1px solid #dcdce6; */
-   /* background: #32a976; */
    border-radius: 5px;
    align-content: center;
    transform: translateX(50%);
@@ -86,6 +159,27 @@ li:hover {
       border: 1px solid #808080;
       /* background:#3CB371 ; */
      background: #2e9669;
+}
+
+.sair{
+    position: absolute;
+    right:20px;
+    bottom: 10px;
+    padding: 12px 20px;
+    border: 1px solid #B0C4DE;
+    border-radius: 8px;
+    cursor: pointer;
+    width: auto;
+    height: auto;
+    font: 500 16px Roboto, sans-serif;
+    text-align: center;
+    color: #292828;
+    background: #32a976;
+}
+
+.sair:hover{
+    border: 1px solid #808080;
+    background: #2e9669;
 }
 
 
