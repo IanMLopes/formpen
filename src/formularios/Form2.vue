@@ -31,14 +31,14 @@
             </tr>
     
     </table>
-   
-    <canvas id="paint-canvas"></canvas>
+   <div>
+     <canvas id="paint-canvas" > </canvas>
 
-     <div v-html="paghtml"> </div>
-  
+     <div  id="altura"  v-html="paghtml"> </div>
+
+   </div>
 
     </div>
-
    
     <div style="width: 90%; height: auto; justify-content: space-between; margin: 0 auto 50px auto; display: flex;">
     <div class="colors" style=" text-align: center;  ">
@@ -78,18 +78,21 @@ export default {
                 paghtml:[], 
                 stringImg:'',
                 nr_atendimento:localStorage.getItem('nr_atendimento'),
-                armazenar_termo:  localStorage.getItem('armazenar_termo')
+                armazenar_termo:  localStorage.getItem('armazenar_termo'),
                 
             }
             
         },
-        created() {
-           DataServices.buscar(this.armazenar_termo,  this.nr_atendimento).then(response => {
+         async  created() {
+           await  DataServices.buscar(this.armazenar_termo,  this.nr_atendimento).then(response => {
             //  console.log(response.data[0].HTML_FORM)
                     // console.log(response.data[0].HTML_FORM)
-                    this.paghtml = response.data[0].HTML_FORM;
-
-                })                
+                  this.paghtml =  response.data[0].HTML_FORM;
+               console.log("AQUI2")
+               this.mudaAltura()
+                })         
+                
+                
         },
         
 
@@ -106,12 +109,13 @@ console.log("1")
      console.log("4")
       this.enviarDados()
       
-    // localStorage.clear();
+    localStorage.clear();
   
     alert("Enviado com Sucesso!")
 
+    this.$router.push('/')
 
-    this.$router.push('/list')
+  
         
    }
 
@@ -120,33 +124,41 @@ console.log("1")
 },
 
 async enviarDados(){
-   console.log("3")
-
+  
  let enviar = await DataServices.create(this.nr_atendimento, this.armazenar_termo, this.stringImg )
  return enviar
-}
-
 },
+ 
+ mudaAltura() {
+    var alturaAtual = document.querySelector('#altura').offsetHeight;
+    
+    var novaAltura = parseInt(alturaAtual)
 
+     console.log("AAAAAAAAAAAAAAAAAAA",novaAltura)
+     document.querySelector('#paint-canvas').style.height = novaAltura + "px";
 
+      console.log("BBBBBBBBBBB",novaAltura)
 
+      this.forcanvas()
 
-mounted(){
+       
+    },
 
-function forcanvas() {
+  forcanvas() {
 var canvas = document.querySelector('#paint-canvas');
 var context = canvas.getContext("2d");
-// var boundings = canvas.getBoundingClientRect();
+
 
 // Specifications
 var  mouseX = 0;
 var mouseY = 0;
 
-canvas.width  =  900;
-canvas.height =  1300;
+
+canvas.width  = canvas.offsetWidth;
+canvas.height = canvas.offsetHeight;
 
 // canvas.style.width = "900px";
-// canvas.style.height = "1442px";
+// canvas.style.height = .novaAltura;
 
 context.strokeStyle = 'black'; // initial brush color
 
@@ -215,8 +227,6 @@ clearButton.addEventListener('click', function() {
 
 }
 
-forcanvas()
-
 },
 
 }
@@ -226,13 +236,15 @@ forcanvas()
 
 <style scoped>
 #paint-canvas{
-     position: absolute; width: 900px; height: 1300px;  cursor:crosshair; 
+     position: absolute; width: 900px;  padding: 5px;  cursor:crosshair;
+     border: 1px solid red;  align-items: center;
 }
 
-#termo {
+#termo  {
 
-   position: relative; width:  950px;  margin: 0 auto;  padding: 5px;  border: 0;    align-items: center;
+   position: relative; width:  900px;  margin: 0 auto; border: 0; align-items: center; border: 1px solid ; 
 
 }
+
 
 </style>

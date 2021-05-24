@@ -10,9 +10,11 @@ import Form1 from './formularios/Form1'
 import Form2 from './formularios/Form2'
 import Form3 from './formularios/Form3'
 import Form4 from './formularios/Form4'
+import FormDireitoDeveres from './formularios/FormDireitoDeveres'
+import FormAltaUti from './formularios/FormAltaUti'
 
 
-
+FormAltaUti
 Vue.config.productionTip = false
 Vue.use(VueRouter)
 
@@ -27,6 +29,9 @@ const routes = [
   { path: '/form2', name: 'form2', component: Form2 },
   { path: '/form3', name: 'form3', component: Form3 },
   { path: '/form4', name: 'form4', component: Form4 },
+  { path: '/formdireitodeveres', name: 'formdireitodeveres', component: FormDireitoDeveres },
+  { path: '/formaltauti', name: 'formaltauti', component: FormAltaUti },
+  
  
 ]
 

@@ -10,7 +10,7 @@
         </ul>
      
     </div>
-    <button class="sair" v-on:click.prevent="sair()">SAIR</button>
+    <!-- <button class="sair" v-on:click.prevent="sair()">SAIR</button> -->
 </div>
 </template>
     
@@ -30,8 +30,10 @@ export default {
     },
 
 mounted(){
+    
 
     this.carregarDados()
+    console.log("aqui")
     
 
 },
@@ -45,7 +47,7 @@ async carregarDados(){
   await  DataServices.buscartermos().then(response => {
     
         this.listar_termos = response.data
-console.log("11111111",this.listar_termos)
+console.log("todo termos",this.listar_termos)
     
 
 })
@@ -54,7 +56,7 @@ console.log("11111111",this.listar_termos)
    await DataServices.listaFormTermos(this.nr_atendimento)
     .then(response => {
         this.listaFormTermos = response.data
-        console.log("22222222",response.data)
+        console.log("temos preenchido",response.data)
 
         this.buscarFormTermos()
     })
@@ -62,7 +64,7 @@ console.log("11111111",this.listar_termos)
 
 buscarFormTermos() {
 
-console.log("sss",this.listar_termos, this.listaFormTermos)
+console.log("todos temos - termos preenchido",this.listar_termos, this.listaFormTermos)
 if(this.listaFormTermos.length == 0){
     this.listaResultados = this.listar_termos 
 }else {
@@ -79,7 +81,7 @@ for(let item of this.listaFormTermos){
 }
 
 
-  console.log("3333333",this.listaResultados)
+  console.log("com e sem status",this.listaResultados)
 },
 
 armazenarTermo(termoSequencia) {
@@ -90,10 +92,10 @@ localStorage.setItem('armazenar_termo', JSON.stringify(termoSequencia))
 this.$router.push('/form2')
 },
 
-sair(){
-    localStorage.clear();
-    this.$router.push('/')
-} 
+// sair(){
+//     localStorage.clear();
+//     this.$router.push('/')
+// } 
 
 },
 
@@ -107,7 +109,7 @@ sair(){
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap');
 
 .inactive{
-    background: #cccccc ;
+    background: #3aca8c;
     border: 1px solid #999999;
     color: #666666;
     pointer-events:none;
@@ -152,16 +154,17 @@ li {
     text-align: center;
     margin: 0;
     color: rgb(41, 40, 40);
-    background: #32a976;
+    background: #4af3aa;
 }
 
 li:hover {
-      border: 1px solid #808080;
+      border: 2px solid #808080;
+      transition-duration: .1s;
       /* background:#3CB371 ; */
-     background: #2e9669;
 }
 
-.sair{
+
+/* .sair{
     position: absolute;
     right:20px;
     bottom: 10px;
@@ -180,7 +183,7 @@ li:hover {
 .sair:hover{
     border: 1px solid #808080;
     background: #2e9669;
-}
+} */
 
 
 </style>

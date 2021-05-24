@@ -18,7 +18,7 @@
                 <img crossorigin="anonymous"  src="./samel_logo.jpg" alt="" style="width: 120px; height: 120px;"> </td>
 
                 <td rowspan="4"    style="border: 1px solid;  text-align: center;   font: 400 14px Roboto, sans-serif; font-weight:bold, color: #808080;  ">
-                    TERMO DE CONSENTIMENTO INFORMADO PARA INTERNAÇÃO E PROCEDIMENTOS NAS UNIDADES DE TERAPIA INTENSIVA (UTI)</td>
+                   SAMEL: TERMO DE CONSENTIMENTO</td>
                     
                 <td style="border: 1px solid;  text-align: center;   font: 400 14px Roboto, sans-serif;    color: #808080;">Código: F-CRP-012</td>
             </tr>
@@ -37,14 +37,49 @@
     
     </table>
         
-    <div  style=" width: 85%;   margin: 10px auto;   line-height: 14pt;   font: 400 16px Roboto, sans-serif;   color: #000;">
-    <p  style="border: 1px solid;  text-align: center;   font: 400 14px Roboto, sans-serif; font-weight:bold, color: #808080;  "> TERMO DE CONSENTIMENTO INFORMADO PARA INTERNAÇÃO E PROCEDIMENTOS NAS UNIDADES DE TERAPIA INTENSIVA (UTI)</p>
-        <p style=" text-align: justify;   margin: 10px auto;">Este Termo de Consentimento Informado tem o objetivo de informar ao paciente e/ou ao seu 
-        responsável/representante legal, todos os aspectos, riscos e objetivos da INTERNAÇÃO NA UNIDADE DE
-        TERAPIA INTENSIVA (UTI) a qual o paciente será submetido, complementando as informações prestadas pelo médico 
-        assistente e pela equipe multidisciplinar do Hospital SAMEL.
-        </p>
+<!--  -----------  INÍCIO --------------- -->
+
+    <div  style=" width: 85%;   margin: 10px auto;   line-height: 14pt;   font: 400 16px Roboto, sans-serif;  color: #000;">
+      <table style="width:100%;">
+       <tr>
+       <td  style=" padding: 10px; border: 1px solid; font: 600 14px Roboto, sans-serif;  text-align: center;    color: #808080;  ">
+       DIREITOS E DEVERES DE PACIENTES E ACOMPANHANTES NA UTI ADULTO </td>
+       </tr>
+       <tr>
+         <td style=" padding: 5px; border: 1px solid; font: 600 12px Roboto, sans-serif;  text-align: center; color: #808080;  ">
+           ABRANGÊNCIA DO FORMULÁRIO: Uti Adulto
+         </td>
+       </tr>
+      </table>
+
+      <table style=" width:100%; height:50px; font: 600 14px Roboto, sans-serif;  text-align: left;    color: #808080; ">
+        <tr>
+           <td style="border: 1px solid; width:18%; vertical-align: text-top;"><strong> Leito: </strong></td>
+           <td style="border: 1px solid; vertical-align: text-top;"><strong> Cliente: </strong></td>
+           <td style="border: 1px solid; width:30%; vertical-align: text-top;"><strong> Atendimento:</strong></td>
+        </tr>
+      </table>
+        <p style="text-align: center; font: 600 18px Roboto, sans-serif; color:#000;">DIREITO</p>
         <p style=" text-align: justify;   margin: 10px auto;">
+01.) Obter um atendimento digno, atencioso e respeitoso por parte de todos os profissionais de saúde, sem discriminação de qualquer natureza. 
+<br>02.) Ser identificado e tratado pelo seu nome e sobrenome, e não por códigos, números, nome de sua doença ou de forma genérica, desrespeitosa ou preconceituosa. 
+<br>03.) Identificar o profissional por crachá, que deverá conter a fotografia do profissional, seu nome e setor legíveis, assim como ser mantido em local visível. 
+<br>04.) Obter informações claras, objetivas, respeitosas e compreensíveis sobre hipótese diagnóstica e ações terapêuticas, o que pode ocorrer delas, duração prevista dos tratamentos propostos, bem como os riscos de não realizá-los, se existe a necessidade ou não de utilização de anestesia, o tipo a ser aplicada e o instrumental a ser utilizado, as partes do corpo afetadas, os riscos e conseqüências indesejáveis e duração esperada do procedimento. 
+<br>05.) Ser prévia e expressamente informado, bem como consentir ou recusar de forma livre, voluntária e esclarecida, quando o tratamento proposto for, total ou parcialmente, experimental, ou fizer parte de protocolos de pesquisa. 
+<br>06.) Receber do profissional adequado, presente no local, auxílio para melhoria do seu conforto e bem estar. 
+<br>07.) Exigir que o hospital cumpra todas as normas de prevenção e controle de infecção hospitalar – conforme o regulamentado pelos órgãos competentes. 
+<br>08.) Ter seu prontuário elaborado de forma legível e de acesso ao conteúdo de acordo com a legislação vigente e as normas estabelecidas pelo Hospital. O prontuário deverá conter sua identificação pessoal, anamnese, exame físico, exames complementares com os respectivos resultados, hipóteses diagnósticas, diagnóstico definitivo, procedimentos ou tratamentos realizados, evolução e prescrição médica diária, bem como identificação clara de cada profissional prestador do cuidado, de acordo com os documentos padronizados pelo Hospital. 
+<br>09.) Ter sua privacidade, individualidade e integridade física, asseguradas em qualquer momento do atendimento, e na satisfação de suas necessidades fisiológicas, respeitando os seus valores éticos e culturais e a confidencialidade de toda e qualquer informação pessoal e segurança do procedimento; 
+<br>10.)Receber informações sobre medicamentos que lhe serão administrados. 
+<br>11.) Receber informação, quando solicitar, sobre a procedência do sangue e hemoderivados e poder verificar, antes de recebê-los, os carimbos que atestam sua origem, sorologias efetuadas e prazo de validade. Todas essas informações deverão constar no prontuário do paciente. 
+<br>13.) Ser devidamente orientado e treinado, se necessário, sobre como conduzir seu tratamento após a alta, recebendo instruções e esclarecimentos médicos claros, escritos de forma legível, visando buscar sua cura, reabilitação além da prevenção de complicações. 
+<br>14.) Revogar a qualquer tempo, ou recusar livremente, uma vez devidamente esclarecido os riscos inerentes, os procedimentos médicos sejam eles diagnósticos, terapêuticos ou mesmo avaliações clínicas, desde que não haja risco de morte. 
+<br>15.)Ter livre acesso a qualquer procedimento diagnóstico e terapêutico disponível na Instituição, desde que indicado por médicos responsáveis. 
+<br>16.) Poder indicar familiar ou responsável para tomar decisões a respeito dos procedimentos diagnósticos ou terapêuticos, inclusive no que se refere a tratamentos, cuidados e procedimentos extraordinários para prolongamento da vida. 
+<br>17.) Ser informado sobre todos os direitos acima, sobre as normas e regulamentos do Hospital e sobre os canais de comunicação institucionais para obtenção de informações, esclarecimento de dúvidas, podendo expressar suas preocupações e queixas para a direção da Instituição através do Serviço de Atendimento ao Cliente. 
+
+        </p>
+        <!-- <p style=" text-align: justify;   margin: 10px auto;">
        <strong> Paciente:  Registo: </strong><br/><br/>
         Convênio: UTI:  Aduto (  )  NEO (  )  <br/> <br/>
         Leito:__________ Indicação/Diagnóstico: <br/> <br/>
@@ -108,7 +143,7 @@
             ____________________________________________<br/>
             Assinatura do Médico com carimbo do CRM
     
-        </p>
+        </p> -->
     
     </div>  
       
@@ -259,14 +294,10 @@ forcanvas()
 
     
 }
-
-
 </script>
 
 <style scoped>
-
-
-
-
-
+d{
+  vertical-align: text-top;
+}
 </style>
